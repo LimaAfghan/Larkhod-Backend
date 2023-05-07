@@ -1,13 +1,12 @@
 import Joi from "joi";
-import { objectId, password } from "./custom.validation";
+import { objectId } from "./custom.validation";
 
 const create = {
   body: Joi.object().keys({
     name: Joi.string().required(),
-    email: Joi.string().required().email(),
+    description: Joi.string().required(),
     image: Joi.string().required(),
-    phone: Joi.string().required(),
-    password: Joi.string().required().custom(password),
+    lessons: Joi.array().required(),
   }),
 };
 
@@ -24,9 +23,9 @@ const updateById = {
   body: Joi.object()
     .keys({
       name: Joi.string().optional(),
-      email: Joi.string().optional().email(),
+      description: Joi.string().optional(),
       image: Joi.string().optional(),
-      phone: Joi.string().optional(),
+      lessons: Joi.array().optional(),
     })
     .min(1),
 };
@@ -37,22 +36,9 @@ const deleteById = {
   }),
 };
 
-const updateMe = {
-  body: Joi.object()
-    .keys({
-      name: Joi.string().optional(),
-      image: Joi.string().optional(),
-      phone: Joi.string().optional(),
-    })
-    .min(1),
-};
-
-
-
 export default {
   create,
   getById,
   updateById,
   deleteById,
-  updateMe,
 };
