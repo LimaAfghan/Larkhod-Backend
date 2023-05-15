@@ -3,10 +3,10 @@ import { objectId } from "./custom.validation";
 
 const create = {
   body: Joi.object().keys({
-    name: Joi.string().required(),
-    description: Joi.string().required(),
-    image: Joi.string().required(),
-    lessons: Joi.array().required(),
+    lable: Joi.string().required(),
+    subject_path: Joi.string().required(),
+    download_pdf: Joi.string().required(),
+    parts: Joi.array().required(),
   }),
 };
 
@@ -22,10 +22,10 @@ const updateById = {
   }),
   body: Joi.object()
     .keys({
-      name: Joi.string().optional(),
-      description: Joi.string().optional(),
-      image: Joi.string().optional(),
-      lessons: Joi.array().optional(),
+      lable: Joi.string().optional(),
+    subject_path: Joi.string().optional(),
+    download_pdf: Joi.string().optional(),
+    parts: Joi.array().optional(),
     })
     .min(1),
 };

@@ -2,9 +2,9 @@
   "name": "nodejs_backend",
   "version": "1.0.0",
   "description": "",
-  "main": "./dist/src/index.js",
+  "main": "./dist/index.js",
   "scripts": {
-    "start": "node ./dist/src/index.js",
+    "start": "node ./dist/index.js",
     "dev": "tsc && nodemon src/index.ts",
     "migrate": "npx prisma migrate dev --name init",
     "seed": "npx prisma migrate reset",
@@ -59,6 +59,6 @@
   "author": "",
   "license": "ISC",
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   }
 }

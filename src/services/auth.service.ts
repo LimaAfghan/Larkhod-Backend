@@ -57,14 +57,6 @@ const verifyEmail = async (verifyEmailToken) => {
     if (!user) {
       throw new Error();
     }
-    if (user.active) {
-      throw new ApiError(httpStatus.NOT_FOUND, "Email already taken");
-    }
-
-    const updateduser = await User.findByIdAndUpdate(user._id, {
-      $set: { active: true },
-    });
-    await updateduser.save();
   } catch (error) {
     throw new ApiError(httpStatus.UNAUTHORIZED, "Email verification failed");
   }

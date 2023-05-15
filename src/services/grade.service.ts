@@ -1,22 +1,22 @@
 import httpStatus from "http-status";
-import Lesson from "../Models/Lesson";
+import Grade from "../Models/Grade";
 import ApiError from "../utils/ApiError";
 
 const create = async (reqBody) => {
-  return await Lesson.create(reqBody);
+  return await Grade.create(reqBody);
 };
 
 const query = async () => {
-  return await Lesson.find();
+  return await Grade.find();
 };
 
 const getById = async (id) => {
-  return await Lesson.findById(id);
+  return await Grade.findById(id);
 };
 
 
 const updateById = async (id, updateBody) => {
-  const result = await Lesson.findByIdAndUpdate(id, updateBody);
+  const result = await Grade.findByIdAndUpdate(id, updateBody);
   if (!result) {
     throw new ApiError(httpStatus.NOT_FOUND, "Not found");
   }
@@ -28,7 +28,7 @@ const deleteById = async (id) => {
   if (!result) {
     throw new ApiError(httpStatus.NOT_FOUND, "Not found");
   }
-  await Lesson.findByIdAndRemove(id);
+  await Grade.findByIdAndRemove(id);
   return result;
 };
 

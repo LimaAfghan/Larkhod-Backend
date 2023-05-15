@@ -3,8 +3,8 @@ import { objectId } from "./custom.validation";
 
 const create = {
   body: Joi.object().keys({
-    content: Joi.object().required(),
-    book: Joi.string().required().custom(objectId),
+    lable: Joi.string().required(),
+    grade_path: Joi.string().required(),
   }),
 };
 
@@ -20,8 +20,8 @@ const updateById = {
   }),
   body: Joi.object()
     .keys({
-      content: Joi.object().optional(),
-      book: Joi.string().optional().custom(objectId),
+      lable: Joi.string().optional(),
+    grade_path: Joi.string().optional(),
     })
     .min(1),
 };
