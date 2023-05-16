@@ -7,10 +7,13 @@ const mongoose_1 = __importDefault(require("mongoose"));
 const app_1 = __importDefault(require("./app"));
 const config_1 = __importDefault(require("./config/config"));
 const logger_1 = __importDefault(require("./config/logger"));
+const book = require('./schoolsubject');
+const bookSchema = require('./Models/Book');
 mongoose_1.default.set("strictQuery", true);
 mongoose_1.default
     .connect(config_1.default.mongo.connection_string)
     .then(() => {
+    bookSchema.insertMany(book);
     const server = app_1.default.listen(config_1.default.port || 8000, () => {
         logger_1.default.info(`Listening to port ${config_1.default.port}`);
     });
