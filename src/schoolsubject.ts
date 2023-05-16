@@ -1,4 +1,4 @@
-module.exports=[
+export const allData=[
     
     
         {  "subject_path": "/Dari/",

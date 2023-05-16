@@ -1,4 +1,7 @@
-module.exports = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.allData = void 0;
+exports.allData = [
     { "subject_path": "/Dari/",
         "label": "زبان دری ",
         "parts": [

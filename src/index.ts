@@ -2,17 +2,22 @@ import mongoose from "mongoose";
 import app from "./app";
 import config from "./config/config";
 import logger from "./config/logger";
-const book=require('./schoolsubject')
-const bookSchema=require('./Models/Book')
+import {insertData,removeAllData} from "./seed"
+
+
 
 mongoose.set("strictQuery", true)
 mongoose
   .connect(config.mongo.connection_string)
   .then(() => {
-    bookSchema.insertMany(book)
-    const server = app.listen(config.port || 8000, () => {
+    
+    const server = app.listen(config.port || 8000, async () => {
       logger.info(`Listening to port ${config.port}`);
+      await removeAllData()
+      await insertData()
+      
     });
+
     const exitHandler = () => {
       if (server) {
         server.close(() => {
