@@ -25,7 +25,7 @@ const getById = (id) => __awaiter(void 0, void 0, void 0, function* () {
     return yield Book_1.default.findById(id);
 });
 const updateById = (id, updateBody) => __awaiter(void 0, void 0, void 0, function* () {
-    const result = yield Book_1.default.findByIdAndUpdate(id, updateBody);
+    const result = yield Book_1.default.findByIdAndUpdate(id, updateBody, { new: true });
     if (!result) {
         throw new ApiError_1.default(http_status_1.default.NOT_FOUND, "Not found");
     }

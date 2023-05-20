@@ -3,7 +3,7 @@ import { objectId } from "./custom.validation";
 
 const create = {
   body: Joi.object().keys({
-    lable: Joi.string().required(),
+    label: Joi.string().required(),
     subject_path: Joi.string().required(),
     download_pdf: Joi.string().required(),
     parts: Joi.array().required(),
@@ -22,7 +22,7 @@ const updateById = {
   }),
   body: Joi.object()
     .keys({
-      lable: Joi.string().optional(),
+      label: Joi.string().optional(),
     subject_path: Joi.string().optional(),
     download_pdf: Joi.string().optional(),
     parts: Joi.array().optional(),

@@ -27,8 +27,11 @@ const getByEmail = async (email) => {
 };
 
 const updateById = async (userId, updateBody) => {
-  const user = await User.findByIdAndUpdate(userId, updateBody);
+
+  const user = await User.findByIdAndUpdate(userId, updateBody,{new:true});
+
   if (!user) {
+
     throw new ApiError(httpStatus.NOT_FOUND, "User not found");
   }
   return user;

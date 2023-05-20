@@ -8,11 +8,16 @@ const upload_routes_1 = __importDefault(require("./upload.routes"));
 const user_routes_1 = __importDefault(require("./user.routes"));
 const book_routes_1 = __importDefault(require("./book.routes"));
 const grade_routes_1 = __importDefault(require("./grade.routes"));
+const auth_routes_1 = __importDefault(require("./auth.routes"));
 const router = express_1.default.Router();
 const defaultRoutes = [
     {
         path: "/user",
         route: user_routes_1.default,
+    },
+    {
+        path: "/auth",
+        route: auth_routes_1.default,
     },
     {
         path: "/grade",

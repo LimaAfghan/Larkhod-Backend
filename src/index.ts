@@ -13,8 +13,8 @@ mongoose
     
     const server = app.listen(config.port || 8000, async () => {
       logger.info(`Listening to port ${config.port}`);
-      await removeAllData()
-      await insertData()
+      // await removeAllData()
+      // await insertData()
       
     });
 

@@ -3,6 +3,7 @@ import uploadRoute from "./upload.routes";
 import userRoute from "./user.routes";
 import bookRoute from "./book.routes";
 import gradeRoute from "./grade.routes";
+import authRoute from "./auth.routes";
 
 const router = express.Router();
 
@@ -10,6 +11,10 @@ const defaultRoutes = [
   {
     path: "/user",
     route: userRoute,
+  },
+  {
+    path: "/auth",
+    route: authRoute,
   },
   {
     path: "/grade",

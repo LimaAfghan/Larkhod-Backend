@@ -16,7 +16,7 @@ const getById = async (id) => {
 
 
 const updateById = async (id, updateBody) => {
-  const result = await Book.findByIdAndUpdate(id, updateBody);
+  const result = await Book.findByIdAndUpdate(id, updateBody,{new:true});
   if (!result) {
     throw new ApiError(httpStatus.NOT_FOUND, "Not found");
   }

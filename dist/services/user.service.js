@@ -33,7 +33,7 @@ const getByEmail = (email) => __awaiter(void 0, void 0, void 0, function* () {
     return yield User_1.default.findOne({ email: email });
 });
 const updateById = (userId, updateBody) => __awaiter(void 0, void 0, void 0, function* () {
-    const user = yield User_1.default.findByIdAndUpdate(userId, updateBody);
+    const user = yield User_1.default.findByIdAndUpdate(userId, updateBody, { new: true });
     if (!user) {
         throw new ApiError_1.default(http_status_1.default.NOT_FOUND, "User not found");
     }
