@@ -7,7 +7,7 @@ const joi_1 = __importDefault(require("joi"));
 const custom_validation_1 = require("./custom.validation");
 const create = {
     body: joi_1.default.object().keys({
-        lable: joi_1.default.string().required(),
+        label: joi_1.default.string().required(),
         subject_path: joi_1.default.string().required(),
         download_pdf: joi_1.default.string().required(),
         parts: joi_1.default.array().required(),
@@ -24,7 +24,7 @@ const updateById = {
     }),
     body: joi_1.default.object()
         .keys({
-        lable: joi_1.default.string().optional(),
+        label: joi_1.default.string().optional(),
         subject_path: joi_1.default.string().optional(),
         download_pdf: joi_1.default.string().optional(),
         parts: joi_1.default.array().optional(),
